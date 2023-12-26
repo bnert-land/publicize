@@ -1,0 +1,8 @@
+{:paths ["src"]
+ :deps {clj-commons/pomegranate {:mvn/version "1.2.23"}}
+ :aliases
+ {:build
+  {:replace-deps {io.github.clojure/tools.build {:mvn/version "0.9.6"}
+                  land.bnert/publicize {:local/root "./"}}
+   :ns-default build}}}
+

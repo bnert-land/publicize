@@ -1,0 +1,4 @@
+.lsp/
+.cpcache/
+target/
+.clj-kondo/.cache/
