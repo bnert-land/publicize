@@ -68,12 +68,10 @@ Add the following to your `build.clj` file (or the equivalent in your project):
                    {:class-dir "", :lib 'myorg.mygroup/mylib})]
     (jar nil)
     (p/publicize
-      {:lib       'myorg.mygroup/mylib
-       :version   "0.1.0"
+      {:lib      'myorg.mygroup/mylib
+       :version  "0.1.0"
        :jar-file "target/mylib.jar"
-       :pom-path (b/pom-path
-                   {:class-dir "target/classes"
-                    :lib       'myorg.mygroup/mylib})})))
+       :pom-path pom-path})))
 ```
 
 Then, call via cli:
