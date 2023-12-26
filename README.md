@@ -1,5 +1,7 @@
 # publicize
 
+[![Clojars Project](https://img.shields.io/clojars/v/land.bnert/publicize.svg)](https://clojars.org/land.bnert/publicize)
+
 Micro-library for publishing to clojars from deps.edn + tools.build.
 
 This library is scoped to be for library authors which utilize
@@ -18,13 +20,19 @@ If you need extra functionality, or want more of a "batteries included" solution
 
 ## Getting Started
 
-### Installation
-deps.edn
+### Install
+Add dependency to deps.edn `:build` alias (may differ for your project):
 ```
-land.bnert/publicize {:mvn/version "0.3.0"}
+{:aliases
+ {:build
+  {:extra-deps {io.github.clojure/tools.build {:mvn/version "..."}
+                ; Add as an extra dep to :build alias
+                land.bnert/publicize {:mvn/version "0.4.0"}}
+   :ns-default build}}}
 ```
 
 ### Usage
+
 Add the following to your `build.clj` file (or the equivalent in your project):
 ```clojure
 (ns build
@@ -80,7 +88,6 @@ $ CLOJARS_USERNAME=... CLOJARS_PASSWORD=... clj -T:build publicize
 ```
 
 ## Alternatives/Prior Work
-
 - [`slipset/deps-deploy`](https://github.com/slipset/deps-deploy)
   - More of a "bundled" approach which handles jar packaging for you.
 - [`applied-science/deps-library`](https://github.com/applied-science/deps-library)
